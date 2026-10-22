@@ -405,11 +405,13 @@
 }
 
 /* Accessibility */
+/*tyes */
 
 @media (prefers-reduced-motion: reduce) {
   .product-details-image img,
   .back-button,
   .continue-shopping-button {
     transition: none;
+
   }
 }
