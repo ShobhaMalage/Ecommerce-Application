@@ -1,0 +1,639 @@
+
+/* =========================================
+   SHOEASE - PREMIUM E-COMMERCE NAVBAR
+   Responsive | Desktop | Tablet | Mobile
+========================================= */
+
+:root {
+  --navy: #101827;
+  --navy-light: #1b2639;
+  --gold: #fbbf24;
+  --gold-hover: #f59e0b;
+  --white: #ffffff;
+  --text-dark: #1e293b;
+  --text-muted: #64748b;
+  --border-color: #e5e7eb;
+  --header-height: 82px;
+}
+
+/* Reset navbar styles */
+
+.shop-header,
+.shop-header * {
+  box-sizing: border-box;
+}
+
+.shop-header {
+  width: 100%;
+  position: relative;
+  z-index: 1000;
+  background: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================================
+   TOP NAVBAR
+========================================= */
+
+.navbar-top {
+  width: 100%;
+  min-height: var(--header-height);
+  padding: 14px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  background: var(--navy);
+}
+
+/* =========================================
+   LOGO
+========================================= */
+
+.shop-logo {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  flex-shrink: 0;
+  color: var(--white);
+  text-decoration: none;
+}
+
+.logo-icon {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gold);
+  color: var(--navy);
+  border-radius: 12px;
+  font-size: 28px;
+  font-weight: 800;
+  box-shadow: 0 4px 12px rgba(251, 191, 36, 0.2);
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.logo-text strong {
+  font-size: 25px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -0.7px;
+  color: var(--white);
+}
+
+.logo-text strong span {
+  color: var(--gold);
+}
+
+.logo-text small {
+  color: #cbd5e1;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.1px;
+}
+
+/* =========================================
+   SEARCH BAR
+========================================= */
+
+.navbar-search {
+  flex: 1;
+  max-width: 600px;
+  min-width: 180px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--white);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.navbar-search:focus-within {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.15);
+}
+
+.navbar-search input {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  padding: 0 15px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--text-dark);
+  font-size: 13px;
+}
+
+.navbar-search input::placeholder {
+  color: #94a3b8;
+}
+
+.navbar-search input::-webkit-search-cancel-button {
+  cursor: pointer;
+}
+
+.navbar-search button {
+  width: 50px;
+  min-width: 50px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: var(--gold);
+  color: var(--navy);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.navbar-search button:hover {
+  background: var(--gold-hover);
+}
+
+.navbar-search button svg {
+  width: 21px;
+  height: 21px;
+}
+
+/* =========================================
+   RIGHT-SIDE ACTIONS
+========================================= */
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 22px;
+  flex-shrink: 0;
+}
+
+/* Account section */
+
+.account-area {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--white);
+}
+
+.account-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #475569;
+  border-radius: 50%;
+}
+
+.account-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.account-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+.account-text small {
+  color: #cbd5e1;
+  font-size: 11px;
+}
+
+.account-text a,
+.account-link {
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.account-text a:hover,
+.account-link:hover {
+  color: var(--white);
+}
+
+/* Wishlist and cart links */
+
+.header-action {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-width: 45px;
+  color: #e2e8f0;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.header-action svg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 1.8;
+}
+
+.header-action:hover,
+.header-action.active {
+  color: var(--gold);
+}
+
+/* Count badge */
+
+.count-badge {
+  position: absolute;
+  top: -7px;
+  right: -8px;
+  min-width: 19px;
+  height: 19px;
+  padding: 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--navy);
+  border-radius: 50px;
+  background: #ef4444;
+  color: var(--white);
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* Hide the extra mobile logout on desktop */
+
+.mobile-logout-btn {
+  display: none;
+}
+
+/* =========================================
+   CATEGORY NAVIGATION
+========================================= */
+
+.category-navbar {
+  width: 100%;
+  background: var(--white);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
+}
+
+.category-inner {
+  width: 100%;
+  max-width: 1600px;
+  min-height: 48px;
+  margin: 0 auto;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 29px;
+}
+
+.category-link {
+  position: relative;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #334155;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.category-link::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  border-radius: 3px 3px 0 0;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.2s ease;
+}
+
+.category-link:hover,
+.category-link.active {
+  color: var(--navy);
+}
+
+.category-link:hover::after,
+.category-link.active::after {
+  transform: scaleX(1);
+}
+
+/* Today's Deals */
+
+.deals-link {
+  color: #dc2626;
+}
+
+.deals-link:hover,
+.deals-link.active {
+  color: #b91c1c;
+}
+
+.deals-link::after {
+  background: #ef4444;
+}
+
+/* =========================================
+   MOBILE MENU BUTTON
+========================================= */
+
+.mobile-menu-btn {
+  display: none;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  padding: 9px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border: 1px solid #475569;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.mobile-menu-btn span {
+  display: block;
+  width: 21px;
+  height: 2px;
+  border-radius: 3px;
+  background: var(--white);
+  transition: background 0.2s ease;
+}
+
+.mobile-menu-btn:hover {
+  border-color: var(--gold);
+}
+
+.mobile-menu-btn:hover span {
+  background: var(--gold);
+}
+
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+  .navbar-top {
+    padding: 13px 3%;
+    gap: 18px;
+  }
+
+  .navbar-actions {
+    gap: 14px;
+  }
+
+  .logo-text strong {
+    font-size: 22px;
+  }
+
+  .logo-text small {
+    font-size: 8px;
+  }
+
+  .category-inner {
+    padding: 0 3%;
+    gap: 19px;
+  }
+
+  .category-link {
+    font-size: 11px;
+  }
+}
+
+/* =========================================
+   SMALL TABLETS AND MOBILE
+========================================= */
+
+@media (max-width: 850px) {
+  .navbar-top {
+    min-height: 76px;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding: 13px 4%;
+  }
+
+  .shop-logo {
+    order: 1;
+  }
+
+  .mobile-menu-btn {
+    order: 2;
+    display: flex;
+    margin-left: auto;
+  }
+
+  .navbar-actions {
+    order: 3;
+    gap: 18px;
+  }
+
+  .navbar-search {
+    order: 4;
+    flex: 0 0 100%;
+    max-width: none;
+    height: 43px;
+  }
+
+  .account-area {
+    display: none;
+  }
+
+  .mobile-logout-btn {
+    display: inline-flex;
+  }
+
+  .category-navbar {
+    display: none;
+  }
+
+  .category-navbar.mobile-open {
+    display: block;
+    border-top: 1px solid #334155;
+    background: var(--navy);
+  }
+
+  .category-inner {
+    min-height: auto;
+    padding: 8px 4% 14px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .category-link {
+    min-height: 44px;
+    justify-content: flex-start;
+    padding: 0 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+    color: #e2e8f0;
+    font-size: 13px;
+  }
+
+  .category-link::after {
+    top: 9px;
+    right: auto;
+    bottom: 9px;
+    left: 0;
+    width: 3px;
+    height: auto;
+    border-radius: 3px;
+  }
+
+  .category-link:hover,
+  .category-link.active {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--gold);
+  }
+
+  .deals-link {
+    color: #fca5a5;
+  }
+
+  .deals-link:hover,
+  .deals-link.active {
+    color: #fecaca;
+  }
+}
+
+/* =========================================
+   MOBILE PHONES
+========================================= */
+
+@media (max-width: 480px) {
+  .navbar-top {
+    padding: 12px 4%;
+    column-gap: 10px;
+    row-gap: 13px;
+  }
+
+  .logo-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    font-size: 24px;
+  }
+
+  .shop-logo {
+    gap: 8px;
+  }
+
+  .logo-text strong {
+    font-size: 20px;
+  }
+
+  .logo-text small {
+    font-size: 7px;
+    letter-spacing: 0.7px;
+  }
+
+  .mobile-menu-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  .navbar-actions {
+    gap: 14px;
+  }
+
+  .header-action {
+    min-width: 35px;
+    font-size: 10px;
+  }
+
+  .header-action svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .count-badge {
+    top: -6px;
+    right: -6px;
+    min-width: 17px;
+    height: 17px;
+    font-size: 9px;
+  }
+
+  .navbar-search {
+    height: 41px;
+  }
+
+  .navbar-search input {
+    padding: 0 10px;
+    font-size: 12px;
+  }
+
+  .navbar-search button {
+    width: 43px;
+    min-width: 43px;
+  }
+
+  .navbar-search button svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .logout-btn.mobile-logout-btn {
+    padding: 8px 10px;
+    border: 1px solid #ef4444;
+    border-radius: 6px;
+    background: transparent;
+    color: #fecaca;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .logout-btn.mobile-logout-btn:hover {
+    background: #dc2626;
+    color: var(--white);
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+.shop-header a:focus-visible,
+.shop-header button:focus-visible,
+.shop-header input:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shop-header *,
+  .shop-header *::before,
+  .shop-header *::after {
+    transition: none !important;
+  }
+}

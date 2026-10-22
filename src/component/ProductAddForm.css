@@ -1,0 +1,302 @@
+/* =========================================
+   ENTERPRISE ADD PRODUCT FORM
+========================================= */
+
+.add-product-section {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 28px 0;
+  padding: 32px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+}
+
+/* Form Heading */
+
+.add-product-heading {
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5eaf1;
+}
+
+.add-product-heading h2 {
+  margin: 0 0 8px;
+  color: #172033;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.add-product-heading p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Form Grid */
+
+.add-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px 22px;
+}
+
+.add-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  min-width: 0;
+}
+
+.add-form-field.full-width {
+  grid-column: 1 / -1;
+}
+
+/* Labels */
+
+.add-form-field label {
+  color: #334155;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+}
+
+/* Inputs, Selects and Textareas */
+
+.add-form-field input,
+.add-form-field select,
+.add-form-field textarea {
+  width: 100%;
+  min-height: 44px;
+  box-sizing: border-box;
+  padding: 11px 13px;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #0f172a;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.add-form-field input::placeholder,
+.add-form-field textarea::placeholder {
+  color: #94a3b8;
+}
+
+.add-form-field input:hover,
+.add-form-field select:hover,
+.add-form-field textarea:hover {
+  border-color: #94a3b8;
+}
+
+.add-form-field input:focus,
+.add-form-field select:focus,
+.add-form-field textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.add-form-field textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.add-form-field select {
+  cursor: pointer;
+}
+
+.add-form-field input:disabled,
+.add-form-field select:disabled,
+.add-form-field textarea:disabled {
+  background: #f1f5f9;
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+/* File Upload */
+
+.add-form-field input[type="file"] {
+  min-height: 48px;
+  padding: 8px;
+  background: #f8fafc;
+  border-style: dashed;
+  cursor: pointer;
+}
+
+.add-form-field input[type="file"]::file-selector-button {
+  margin-right: 12px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  background: #eaf1ff;
+  color: #1d4ed8;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.add-form-field input[type="file"]::file-selector-button:hover {
+  background: #dbeafe;
+}
+
+/* Validation Messages */
+
+.form-error {
+  color: #dc2626;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.add-form-field input[aria-invalid="true"],
+.add-form-field select[aria-invalid="true"],
+.add-form-field textarea[aria-invalid="true"] {
+  border-color: #dc2626;
+}
+
+.form-hint {
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Success Message */
+
+.form-success {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 24px;
+  padding: 14px 16px;
+  border: 1px solid #a7f3d0;
+  border-radius: 8px;
+  background: #f0fdf4;
+  color: #166534;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Form Actions */
+
+.add-form-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 30px;
+  padding-top: 22px;
+  border-top: 1px solid #e5eaf1;
+}
+
+.add-form-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 11px 22px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.add-form-actions button:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.25);
+  outline-offset: 2px;
+}
+
+.add-form-actions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Primary Button */
+
+.add-product-btn {
+  background: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
+}
+
+.add-product-btn:hover:not(:disabled) {
+  background: #1d4ed8;
+  box-shadow: 0 3px 8px rgba(37, 99, 235, 0.18);
+}
+
+/* Secondary Button */
+
+.reset-product-btn {
+  border-color: #cbd5e1 !important;
+  background: #ffffff;
+  color: #334155;
+}
+
+.reset-product-btn:hover:not(:disabled) {
+  border-color: #94a3b8 !important;
+  background: #f8fafc;
+}
+
+/* Responsive Layout */
+
+@media (max-width: 768px) {
+  .add-product-section {
+    padding: 24px;
+  }
+
+  .add-form-grid {
+    gap: 20px;
+  }
+
+  .add-product-heading h2 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 600px) {
+  .add-product-section {
+    margin: 20px 0;
+    padding: 18px;
+    border-radius: 9px;
+  }
+
+  .add-product-heading {
+    margin-bottom: 22px;
+    padding-bottom: 16px;
+  }
+
+  .add-product-heading h2 {
+    font-size: 20px;
+  }
+
+  .add-form-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .add-form-field.full-width {
+    grid-column: auto;
+  }
+
+  .add-form-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .add-form-actions button {
+    width: 100%;
+  }
+}

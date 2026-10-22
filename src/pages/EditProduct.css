@@ -1,0 +1,250 @@
+
+/* ========================================
+   EDIT / UPDATE PRODUCT PAGE
+   Professional E-Commerce Theme
+======================================== */
+
+.update-page {
+  min-height: 100vh;
+  padding: 32px 20px;
+  box-sizing: border-box;
+  background: #f4f7fb;
+}
+
+/* Main Form Container */
+
+.update-form {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 32px;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.07);
+}
+
+/* Heading */
+
+.update-form h2 {
+  margin: 0 0 8px;
+  color: #1e293b;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.form-subtitle {
+  margin: 0 0 28px;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Form Grid */
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+/* Individual Form Fields */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.form-group label {
+  color: #334155;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Input Fields */
+
+.form-group input {
+  width: 100%;
+  min-height: 44px;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  outline: none;
+  background: #ffffff;
+  color: #1e293b;
+  font-size: 14px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #94a3b8;
+}
+
+/* Description Textarea */
+
+.form-group textarea {
+  width: 100%;
+  min-height: 110px;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  outline: none;
+  background: #ffffff;
+  color: #1e293b;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.6;
+  resize: vertical;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Input Focus */
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #3978c5;
+  box-shadow: 0 0 0 3px rgba(57, 120, 197, 0.12);
+}
+
+/* Validation Messages */
+
+.form-group small {
+  display: block;
+  color: #dc2626;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Image Preview */
+
+.image-preview {
+  margin-top: 24px;
+  color: #475569;
+  font-size: 14px;
+}
+
+.image-preview p {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.image-preview img {
+  display: block;
+  width: 130px;
+  height: 130px;
+  margin-top: 10px;
+  padding: 6px;
+  box-sizing: border-box;
+  object-fit: contain;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+
+/* Form Action Buttons */
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.update-btn,
+.cancel-btn {
+  min-height: 44px;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Update Button */
+
+.update-btn {
+  color: #ffffff;
+  background: #3978c5;
+  box-shadow: 0 3px 8px rgba(57, 120, 197, 0.15);
+}
+
+.update-btn:hover {
+  background: #2865ad;
+  box-shadow: 0 5px 12px rgba(57, 120, 197, 0.2);
+  transform: translateY(-1px);
+}
+
+/* Cancel Button */
+
+.cancel-btn {
+  color: #334155;
+  background: #e2e8f0;
+}
+
+.cancel-btn:hover {
+  background: #cbd5e1;
+}
+
+/* Keyboard Accessibility */
+
+.update-form button:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 3px;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 600px) {
+  .update-page {
+    padding: 20px 12px;
+  }
+
+  .update-form {
+    padding: 22px 16px;
+    border-radius: 12px;
+  }
+
+  .update-form h2 {
+    font-size: 23px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .update-btn,
+  .cancel-btn {
+    width: 100%;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 850px) {
+  .update-form {
+    padding: 26px;
+  }
+
+  .form-grid {
+    gap: 18px;
+  }
+}

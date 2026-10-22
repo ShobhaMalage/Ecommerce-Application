@@ -1,0 +1,32 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Wireless Headphones",
+      "description": "Wireless headphones with clear sound.",
+      "category": "Electronics",
+      "price": 1999,
+      "quantity": 20,
+      "image": "https://placehold.co/300x200?text=Headphones",
+      "status": "Active",
+      "oldPrice": 2499,
+      "discount": 20,
+      "rating": 4.5,
+      "reviews": 25
+    },
+    {
+      "id": "2",
+      "name": "Casual T-Shirt",
+      "description": "Comfortable cotton T-shirt.",
+      "category": "Fashion",
+      "price": 599,
+      "quantity": 35,
+      "image": "https://placehold.co/300x200?text=T-Shirt",
+      "status": "Active",
+      "oldPrice": 799,
+      "discount": 25,
+      "rating": 4.2,
+      "reviews": 15
+    }
+  ]
+}

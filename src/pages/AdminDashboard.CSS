@@ -1,0 +1,889 @@
+
+/* ========================================
+   PRODUCT MANAGEMENT DASHBOARD
+   Responsive | Clean UI | Scoped Styles
+======================================== */
+
+.admin-dashboard,
+.admin-dashboard * {
+  box-sizing: border-box;
+}
+
+.admin-dashboard {
+  width: 100%;
+  min-height: 100vh;
+  padding: 30px;
+  background: #f5f7fb;
+  color: #1e293b;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+.admin-dashboard .admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.admin-dashboard .admin-header h1 {
+  margin: 0 0 8px;
+  color: #172033;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.admin-dashboard .admin-header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ========================================
+   BUTTONS
+======================================== */
+
+.admin-dashboard .add-product-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-shrink: 0;
+  padding: 12px 18px;
+  border: 0;
+  border-radius: 8px;
+  background: #4f46e5;
+  color: #fff;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.admin-dashboard .add-product-btn:hover {
+  background: #3730a3;
+  transform: translateY(-1px);
+}
+
+.admin-dashboard .add-product-btn span {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.admin-dashboard .add-product-btn:focus-visible,
+.admin-dashboard .edit-btn:focus-visible,
+.admin-dashboard .delete-btn:focus-visible {
+  outline: 3px solid #a5b4fc;
+  outline-offset: 2px;
+}
+
+/* ========================================
+   SUMMARY CARDS
+======================================== */
+
+.admin-dashboard .product-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.admin-dashboard .summary-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-width: 0;
+  min-height: 125px;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid #e5eaf2;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.admin-dashboard .summary-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
+}
+
+.admin-dashboard .summary-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 58px;
+  width: 58px;
+  height: 58px;
+  border-radius: 14px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.admin-dashboard .total-icon {
+  color: #4338ca;
+  background: #eef2ff;
+}
+
+.admin-dashboard .stock-icon {
+  color: #047857;
+  background: #d1fae5;
+}
+
+.admin-dashboard .out-icon {
+  color: #b91c1c;
+  background: #fee2e2;
+}
+
+.admin-dashboard .summary-copy {
+  min-width: 0;
+}
+
+.admin-dashboard .summary-card p {
+  margin: 0 0 10px;
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.admin-dashboard .summary-card h2 {
+  margin: 0;
+  color: #172033;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* ========================================
+   PRODUCT MANAGEMENT PANELS
+======================================== */
+
+.admin-dashboard .product-management-card {
+  width: 100%;
+  min-width: 0;
+  margin-bottom: 24px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e5eaf2;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+}
+
+.admin-dashboard .product-management-card:last-child {
+  margin-bottom: 0;
+}
+
+.admin-dashboard .product-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 24px 12px;
+}
+
+.admin-dashboard .product-list-header h2 {
+  margin: 0 0 6px;
+  color: #172033;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.admin-dashboard .product-list-header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* ========================================
+   RECENTLY ADDED PRODUCTS
+======================================== */
+
+.admin-dashboard .recent-products-card {
+  margin-bottom: 24px;
+}
+
+.admin-dashboard .recent-products-card .product-list-header {
+  padding-bottom: 18px;
+}
+
+.admin-dashboard .recent-products-card .admin-product-table {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Recent table has five columns */
+.admin-dashboard .recent-products-card .admin-product-table table {
+  width: 100%;
+  min-width: 800px;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.admin-dashboard .recent-products-card .admin-product-table th,
+.admin-dashboard .recent-products-card .admin-product-table td {
+  padding: 15px 12px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.admin-dashboard .recent-products-card .admin-product-table th {
+  border-top: 1px solid #e8edf5;
+  border-bottom: 1px solid #e8edf5;
+  background: #f8fafc;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+}
+
+/* Recent table column widths */
+
+.admin-dashboard .recent-products-card .admin-product-table th:nth-child(1),
+.admin-dashboard .recent-products-card .admin-product-table td:nth-child(1) {
+  width: 32%;
+  text-align: left;
+}
+
+.admin-dashboard .recent-products-card .admin-product-table th:nth-child(2),
+.admin-dashboard .recent-products-card .admin-product-table td:nth-child(2) {
+  width: 19%;
+}
+
+.admin-dashboard .recent-products-card .admin-product-table th:nth-child(3),
+.admin-dashboard .recent-products-card .admin-product-table td:nth-child(3) {
+  width: 13%;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.admin-dashboard .recent-products-card .admin-product-table th:nth-child(4),
+.admin-dashboard .recent-products-card .admin-product-table td:nth-child(4) {
+  width: 18%;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.admin-dashboard .recent-products-card .admin-product-table th:nth-child(5),
+.admin-dashboard .recent-products-card .admin-product-table td:nth-child(5) {
+  width: 18%;
+  text-align: center;
+}
+
+.admin-dashboard .recent-products-card .date-added-cell {
+  color: #475569;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+/* Recent table row borders and hover */
+
+.admin-dashboard .recent-products-card .admin-product-table tbody tr {
+  background: #fff;
+  transition: background 0.2s ease;
+}
+
+.admin-dashboard .recent-products-card .admin-product-table tbody tr:hover {
+  background: #f8faff;
+}
+
+.admin-dashboard .recent-products-card .admin-product-table tbody td {
+  height: 78px;
+  border-bottom: 1px solid #edf1f7;
+  color: #334155;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.admin-dashboard .recent-products-card .admin-product-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+/* ========================================
+   SEARCH AND CATEGORY FILTER
+======================================== */
+
+.admin-dashboard .product-filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 24px 22px;
+}
+
+.admin-dashboard .admin-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1 1 420px;
+  max-width: 420px;
+  min-width: 0;
+  padding: 0 13px;
+  border: 1px solid #dce3ee;
+  border-radius: 8px;
+  background: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.admin-dashboard .admin-search:focus-within {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+.admin-dashboard .admin-search > span {
+  flex-shrink: 0;
+  color: #64748b;
+  font-size: 23px;
+  line-height: 1;
+}
+
+.admin-dashboard .admin-search input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 12px 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #1e293b;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.admin-dashboard .admin-search input::placeholder {
+  color: #94a3b8;
+}
+
+.admin-dashboard .product-filters select {
+  flex: 0 0 200px;
+  min-width: 180px;
+  max-width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #dce3ee;
+  border-radius: 8px;
+  background: #fff;
+  color: #334155;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  outline-color: #4f46e5;
+}
+
+/* ========================================
+   TABLE WRAPPER
+======================================== */
+
+.admin-dashboard .admin-product-table {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ========================================
+   ALL PRODUCTS TABLE
+======================================== */
+
+.admin-dashboard .admin-product-table table {
+  width: 100%;
+  min-width: 1100px;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+/* Table headings */
+
+.admin-dashboard .admin-product-table th {
+  padding: 16px 10px;
+  border-top: 1px solid #e8edf5;
+  border-bottom: 1px solid #e8edf5;
+  background: #f8fafc;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+/* Table cells */
+
+.admin-dashboard .admin-product-table td {
+  height: 78px;
+  padding: 14px 10px;
+  border-bottom: 1px solid #edf1f7;
+  color: #334155;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.admin-dashboard .admin-product-table tbody tr {
+  background: #fff;
+  transition: background 0.2s ease;
+}
+
+.admin-dashboard .admin-product-table tbody tr:hover {
+  background: #f8faff;
+}
+
+.admin-dashboard .admin-product-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+/* ========================================
+   ALL PRODUCTS COLUMN WIDTHS
+   Product | Category | Price | Stock | Status | Actions
+======================================== */
+
+/* Product */
+
+.admin-dashboard .admin-product-table th:nth-child(1),
+.admin-dashboard .admin-product-table td:nth-child(1) {
+  width: 28%;
+  text-align: left;
+}
+
+/* Category */
+
+.admin-dashboard .admin-product-table th:nth-child(2),
+.admin-dashboard .admin-product-table td:nth-child(2) {
+  width: 17%;
+  text-align: center;
+}
+
+/* Price */
+
+.admin-dashboard .admin-product-table th:nth-child(3),
+.admin-dashboard .admin-product-table td:nth-child(3) {
+  width: 12%;
+  text-align: center !important;
+  vertical-align: middle !important;
+  white-space: nowrap;
+}
+
+.admin-dashboard .admin-product-table td.product-price {
+  display: table-cell !important;
+  padding: 14px 0;
+  color: #172033;
+  font-weight: 700;
+  text-align: center !important;
+  vertical-align: middle !important;
+  white-space: nowrap;
+}
+
+/* Stock quantity */
+
+.admin-dashboard .admin-product-table th:nth-child(4),
+.admin-dashboard .admin-product-table td:nth-child(4) {
+  width: 10%;
+  text-align: center;
+}
+
+.admin-dashboard .admin-product-table td.quantity-cell {
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Status */
+
+.admin-dashboard .admin-product-table th:nth-child(5),
+.admin-dashboard .admin-product-table td:nth-child(5) {
+  width: 15%;
+  text-align: center;
+}
+
+/* Actions */
+
+.admin-dashboard .admin-product-table th:nth-child(6),
+.admin-dashboard .admin-product-table td:nth-child(6) {
+  width: 18%;
+  text-align: center;
+}
+
+/* ========================================
+   PRODUCT IMAGE AND DETAILS
+======================================== */
+
+.admin-dashboard .admin-product-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+  text-align: left;
+}
+
+.admin-dashboard .admin-product-image,
+.admin-dashboard .admin-product-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #f1f5f9;
+}
+
+.admin-dashboard .admin-product-image {
+  object-fit: contain;
+  padding: 4px;
+}
+
+.admin-dashboard .admin-product-placeholder {
+  color: #94a3b8;
+  font-size: 24px;
+}
+
+.admin-dashboard .admin-product-details {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  min-width: 0;
+}
+
+.admin-dashboard .admin-product-details strong {
+  display: block;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  color: #1e293b;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.admin-dashboard .admin-product-details span {
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+/* ========================================
+   CATEGORY LABEL
+======================================== */
+
+.admin-dashboard .category-label {
+  display: inline-block;
+  max-width: 100%;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 12px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+/* ========================================
+   STOCK STATUS BADGES
+======================================== */
+
+.admin-dashboard .admin-product-table td.status-cell {
+  min-width: 0;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.admin-dashboard .admin-product-table .stock-badge {
+  position: static;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 105px;
+  padding: 7px 10px;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.4;
+  white-space: nowrap;
+  visibility: visible;
+  opacity: 1;
+}
+
+.admin-dashboard .admin-product-table .stock-badge.in-stock {
+  border-color: #86efac;
+  background: #dcfce7;
+  color: #166534;
+}
+
+.admin-dashboard .admin-product-table .stock-badge.out-of-stock {
+  border-color: #fca5a5;
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* ========================================
+   EDIT AND DELETE ACTIONS
+======================================== */
+
+.admin-dashboard .admin-product-table td.actions-cell {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.admin-dashboard .admin-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.admin-dashboard .edit-btn,
+.admin-dashboard .delete-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  min-width: 54px;
+  padding: 8px 10px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.3;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.admin-dashboard .edit-btn {
+  border-color: #e0e7ff;
+  background: #eef2ff;
+  color: #4338ca;
+}
+
+.admin-dashboard .edit-btn:hover {
+  border-color: #c7d2fe;
+  background: #e0e7ff;
+}
+
+.admin-dashboard .delete-btn {
+  border-color: #ffe4e6;
+  background: #fff1f2;
+  color: #dc2626;
+}
+
+.admin-dashboard .delete-btn:hover {
+  border-color: #fecdd3;
+  background: #ffe4e6;
+}
+
+/* ========================================
+   EMPTY STATE
+======================================== */
+
+.admin-dashboard .admin-empty {
+  padding: 55px 20px;
+  text-align: center;
+}
+
+.admin-dashboard .empty-icon {
+  margin-bottom: 12px;
+  color: #94a3b8;
+  font-size: 42px;
+}
+
+.admin-dashboard .admin-empty h3 {
+  margin: 0 0 8px;
+  color: #1e293b;
+  font-size: 18px;
+}
+
+.admin-dashboard .admin-empty p {
+  margin: 0 0 20px;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ========================================
+   ERROR MESSAGE
+======================================== */
+
+.admin-dashboard .admin-error {
+  margin-bottom: 20px;
+  padding: 13px 16px;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+  .admin-dashboard {
+    padding: 24px;
+  }
+
+  .admin-dashboard .product-summary {
+    gap: 16px;
+  }
+
+  .admin-dashboard .summary-card {
+    gap: 14px;
+    min-height: 115px;
+    padding: 18px;
+  }
+
+  .admin-dashboard .summary-icon {
+    flex-basis: 50px;
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+  }
+
+  .admin-dashboard .summary-card p {
+    font-size: 13px;
+  }
+
+  .admin-dashboard .summary-card h2 {
+    font-size: 27px;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 650px) {
+  .admin-dashboard {
+    padding: 16px;
+  }
+
+  .admin-dashboard .admin-header {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 22px;
+  }
+
+  .admin-dashboard .admin-header h1 {
+    font-size: 23px;
+  }
+
+  .admin-dashboard .admin-header .add-product-btn {
+    width: 100%;
+  }
+
+  .admin-dashboard .product-summary {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+
+  .admin-dashboard .summary-card {
+    min-height: 100px;
+    padding: 18px;
+  }
+
+  .admin-dashboard .summary-icon {
+    flex-basis: 50px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .admin-dashboard .summary-card h2 {
+    font-size: 26px;
+  }
+
+  .admin-dashboard .product-list-header {
+    padding: 20px 16px 12px;
+  }
+
+  .admin-dashboard .product-list-header h2 {
+    font-size: 18px;
+  }
+
+  .admin-dashboard .recent-products-card .product-list-header {
+    padding-bottom: 16px;
+  }
+
+  .admin-dashboard .product-filters {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .admin-dashboard .admin-search {
+    width: 100%;
+    max-width: none;
+    flex-basis: auto;
+  }
+
+  .admin-dashboard .product-filters select {
+    flex: 0 0 auto;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .admin-dashboard .admin-empty {
+    padding: 40px 16px;
+  }
+}
+
+/* ========================================
+   VERY SMALL SCREENS
+======================================== */
+
+@media (max-width: 360px) {
+  .admin-dashboard {
+    padding: 12px;
+  }
+
+  .admin-dashboard .admin-header h1 {
+    font-size: 21px;
+  }
+
+  .admin-dashboard .summary-card {
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .admin-dashboard .summary-icon {
+    flex-basis: 44px;
+    width: 44px;
+    height: 44px;
+    font-size: 22px;
+  }
+
+  .admin-dashboard .summary-card h2 {
+    font-size: 24px;
+  }
+
+  .admin-dashboard .product-list-header,
+  .admin-dashboard .product-filters {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+}
